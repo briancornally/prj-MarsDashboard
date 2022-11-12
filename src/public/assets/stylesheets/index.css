@@ -1,0 +1,139 @@
+/* -------------------  MOBILE  --------------------- */
+
+html {
+  background-color: black;
+  color: #f0e7e7;
+}
+
+/* rgb(0, 0, 0) */
+h1 {
+  background-color: #c1440e;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: Arial;
+  min-height: 100vh;
+}
+
+header {
+  /* header styles */
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+footer {
+  /* footer styles */
+}
+
+#menuGrid {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#menuGrid > * {
+  flex: 1 1 70px;
+}
+
+.menuTile {
+  width: 64px;
+  height: 60px;
+  object-fit: fill;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  /* padding: 5px; */
+}
+
+/* rgba(0, 140, 186, 0.5) */
+.menuTile:hover {
+  box-shadow: 0 0 10px 5px #fda600;
+}
+
+.roverTable {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid white;
+  /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	color: #ffffff;
+	margin: 25px 0; */
+}
+
+.roverTable th,
+.roverTable td {
+  /* padding: 12px 15px; */
+}
+
+.roverTable tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.roverTable tbody tr:nth-of-type(even) {
+  background-color: #451804;
+}
+
+.roverTable tbody tr:last-of-type {
+  border-bottom: 2px solid #c1440e;
+}
+
+#imgGrid {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#imgGrid > * {
+  flex: 1 1 70px;
+}
+
+.imgTile {
+  width: 303px;
+  height: 303px;
+  border: 1px solid #ddd;
+  /* padding: 5px; */
+}
+
+/* rgba(0, 140, 186, 0.5) */
+.imgTile:hover {
+	box-shadow: 0 0 10px 5px #fda600;
+  }
+
+/* -------------------  TABLET  --------------------- */
+@media (min-width: 768px) {
+  .menuTile {
+    width: 128px;
+    height: 100px;
+  }
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Mastering_Wrapping_of_Flex_Items flex table */
+  #menuGrid > * {
+    flex: 1 1 130px;
+  }
+}
+/* -------------------  DESKTOP  -------------------- */
+
+@media (min-width: 1224px) {
+  .menuTile {
+    width: 256px;
+    height: 220px;
+  }
+  #menuGrid > * {
+    flex: 1 1 270px;
+  }
+}
+
+/* -------------------  LARGE SCREENS  -------------- */
+
+@media (min-width: 1824px) {
+  .menuTile {
+    width: 256px;
+    height: 220px;
+  }
+  #menuGrid > * {
+    flex: 1 1 270px;
+  }
+}
