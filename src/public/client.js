@@ -1,7 +1,14 @@
-// * n.b. wait 3 seconds after page load for API calls to complete as await not functioning as desired for me
+// * n.b. please wait 3 seconds after page load for API calls to load data - async/await not functioning as desired for me
 
 /**
  * @description Immutable store for all data. `roverName` is the selected rover after click image.
+ * - Credits/attribution: roverImages are from wikipedia
+ * 	- https://commons.wikimedia.org/wiki/File:NASA%27s_Curiousity_Mars_Rover.jpg
+ * 		- Intel Free Press, CC BY-SA 2.0 <https://creativecommons.org/licenses/by-sa/2.0>, via Wikimedia Commons
+ *  - https://commons.wikimedia.org/wiki/File:NASA_Mars_Rover.jpg - menuImage & favicon
+ * 		- NASA/JPL/Cornell University, Maas Digital LLC, Public domain, via Wikimedia Commons
+ *  - https://commons.wikimedia.org/wiki/File:Spirit-dettagli.jpg
+ * 		- The original uploader was Conversion script at Italian Wikipedia., Public domain, via Wikimedia Commons
  */
 let store = {
   roverNames: ["Curiosity", "Opportunity", "Spirit"],
