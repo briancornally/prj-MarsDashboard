@@ -1,4 +1,4 @@
-# prj-MarsDashboard# Functional Programming with Javascript
+# prj-MarsDashboard - Functional Programming with Javascript
 
 ## Student Instructions
 
