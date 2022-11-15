@@ -221,7 +221,7 @@ const addImgTilesToDOM = (state) => {
 };
 
 /**
- * @description a Higher Order Function (HOF) to add the Rover photo images to the DOM
+ * @description Higher Order Function (HOF) to add the Rover photo images to the DOM
  * @param {obj} imgEntry - 2 element array of imgName, imgUrl
  * @param {obj} className - the css class name
  * @param {obj} onClickCallback - the onClick callback function ***
