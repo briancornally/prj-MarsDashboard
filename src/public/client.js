@@ -307,7 +307,7 @@ const getRoverManifest = async (state, roverName) => {
 /**
  * @description loop through rovers and get manifest (& photos)
  * - experimented with forEach loop but await did not have the desired effect for me.
- * - Hope to learn to solve this in the next section of the course.
+ * - Hope to learn to solve this better in the next section of the course.
  * @param {obj} state - the local copy of immutable store
  */
 const loadRoverData = async (state) => {
