@@ -1,5 +1,3 @@
-// * n.b. please wait 3 seconds after page load for API calls to load data - async/await not functioning as desired for me
-
 /**
  * @description Immutable store for all data. `roverName` is the selected rover after click image.
  * - Credits/attribution: roverImages are from wikipedia
@@ -114,10 +112,10 @@ const combineArrays = (arr1, arr2) => {
 };
 
 /**
- * @description Higher Order Function to filter object keys based on callback function.
+ * @description Higher Order Function (HOF) to filter object keys based on callback function.
  * - credit: courtesy of https://masteringjs.io/tutorials/fundamentals/filter-object 2022-11-12 (minor change)
  * @param {string} obj - the object
- * @param {function} callback - the callback function
+ * @param {function} callback - the callback function ***
  * @return {object} - the filtered object
  */
 const filterObject = (obj, callback) => {
@@ -127,10 +125,10 @@ const filterObject = (obj, callback) => {
 };
 
 /**
- * Higher Order Function to Filter to exclude a specified keyName
+ * Higher Order Function (HOF) to Filter to exclude a specified keyName
  * @param {string} key - the key
  * @param {string} value - the value
- * @return {function} - boolean key is NOT a specified keyName
+ * @return {function} - anonymous function with boolean test for key is NOT the specified keyName ***
  */
 const filterExcludeKey = (key, val) => {
   return (keyName) => key !== keyName;
@@ -147,7 +145,7 @@ filterExcludePhotos = filterExcludeKey("photos");
 // ------------------------------------------------------  COMPONENTS
 
 /**
- * @description Higher Order Function to generate a html table from object
+ * @description Higher Order Function (HOF) to generate a html table from object
  * @param {string} cssClassName - ClassName of table
  */
 const generateHtmlTable = (cssClassName) => {
@@ -169,6 +167,8 @@ const generateRoverHtmlTable = generateHtmlTable("roverTable");
  * @return - html instructions or rover manifest html table
  */
 const App = (state) => {
+  let titleElement = document.getElementById("title");
+  titleElement.innerText='Mars Rover Dashboard'
   const { roverName } = state;
   if (roverName) {
     const manifest = state[manifestKey(roverName)];
@@ -221,10 +221,10 @@ const addImgTilesToDOM = (state) => {
 };
 
 /**
- * @description a Higher Order Function to add the Rover photo images to the DOM
+ * @description a Higher Order Function (HOF) to add the Rover photo images to the DOM
  * @param {obj} imgEntry - 2 element array of imgName, imgUrl
  * @param {obj} className - the css class name
- * @param {obj} onClickCallback - the onClick callback function
+ * @param {obj} onClickCallback - the onClick callback function ***
  * @returns {obj} tile - a tile element
  */
 const generateTile = (imgEntry, className, onClickCallback) => {
@@ -306,17 +306,20 @@ const getRoverManifest = async (state, roverName) => {
 
 /**
  * @description loop through rovers and get manifest (& photos)
+ * - experimented with forEach loop but await did not have the desired effect for me.
+ * - Hope to learn to solve this in the next section of the course.
  * @param {obj} state - the local copy of immutable store
  */
 const loadRoverData = async (state) => {
   const roverNames = state.roverNames;
-  await roverNames.forEach(async (roverName) => {
+  for (let indexCount = 0; indexCount < roverNames.length; indexCount++) {
+    roverName = roverNames[indexCount];
     if (
       manifestKey(roverName) in state === false ||
       state[manifestKey(roverName)].dateStamp !== dateStamp()
     ) {
       await getRoverManifest(state, roverName);
     }
-  });
+  }
   return;
 };
