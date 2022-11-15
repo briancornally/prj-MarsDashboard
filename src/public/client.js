@@ -125,7 +125,7 @@ const filterObject = (obj, callback) => {
 };
 
 /**
- * Higher Order Function (HOF) to Filter to exclude a specified keyName
+ * @description Higher Order Function (HOF) to Filter to exclude a specified keyName
  * @param {string} key - the key
  * @param {string} value - the value
  * @return {function} - anonymous function with boolean test for key is NOT the specified keyName ***
