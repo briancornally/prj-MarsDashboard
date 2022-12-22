@@ -1,4 +1,6 @@
-# prj-MarsDashboard - Functional Programming with Javascript
+# Udacity nd032 Intermediate JavaScript Nanodegree - Project 2 - Functional Programming with Javascript
+
+starter code: https://github.com/udacity/nd032-c2-functional-programming-with-javascript-starter.git
 
 ## Student Instructions
 
